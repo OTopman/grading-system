@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
 class LoginController extends Controller
@@ -18,8 +19,13 @@ class LoginController extends Controller
     {
         //
 
-        $data['page_title'] = "AdminLogin";
-        return view('admin.login',$data);
+        $data['page_title'] = "Admin Login";
+
+        if (Auth::check()){
+            return redirect('admin/dashboard');
+        }else{
+            return view('admin.login',$data);
+        }
 
     }
 
@@ -58,6 +64,13 @@ class LoginController extends Controller
         ]);
 
         if ($log){
+
+            if (Auth::user()->role_id == 3){
+                return redirect('admin/dashboard');
+            }else{
+                Auth::guard()->logout();
+                return back()->with("alert_error", 'Access denied please try again');
+            }
 
         }else{
             return back()->with("alert_error", 'Invalid login details please try again');
