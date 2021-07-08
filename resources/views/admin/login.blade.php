@@ -14,10 +14,14 @@
                                     <h3 class="mb-4 text-center" style="font-weight: 400">{{$page_title}}</h3>
                                 </div>
                             </div>
-                            <form action="{{route('login.store')}}" method="post" class="signin-form">
+
+                            @include('flash')
+
+                            <form action="{{url('admin/login')}}" method="post" class="signin-form">
+                                @csrf
                                 <div class="form-group mt-3">
-                                    <input type="email" name="email_address" class="form-control" required>
-                                    <label class="form-control-placeholder" for="username">Email Address</label>
+                                    <input type="username" name="username" value="{{old('username',request('username'))}}" class="form-control" required>
+                                    <label class="form-control-placeholder" for="username">Username</label>
                                 </div>
                                 <div class="form-group">
                                     <input id="password-field" name="password" type="password" class="form-control" required>

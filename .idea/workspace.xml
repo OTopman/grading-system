@@ -2,32 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="654e402c-dccd-4c7d-b140-710e026b65e1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Helpers/Helpers.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/asset/images/a.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/asset/images/bg-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/asset/images/icon.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/asset/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/asset/images/logo2fade.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/asset/libs/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/asset/libs/css/bootstrap/_media.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/asset/libs/css/bootstrap/mixins/_border-radius.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/asset/libs/css/bootstrap/mixins/_screen-reader.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/asset/libs/css/bootstrap/mixins/_transition.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/asset/libs/css/bootstrap/mixins/_visibility.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/asset/libs/css/bootstrap/utilities/_stretched-link.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/asset/libs/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/asset/libs/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/asset/libs/js/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/asset/libs/js/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/asset/libs/js/popper.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/login.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/staff/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/auths/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/admin/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/admin/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/admin/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/login.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/auths/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auths/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auths/login.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,14 +18,19 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/staff/login.blade.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/admin/LoginController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="19" column="99" selection-start-line="19" selection-start-column="99" selection-end-line="19" selection-end-column="99" />
-              <folding>
-                <element signature="e#545#592#0#HTML" expanded="true" />
-                <element signature="e#586#610#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="486">
+              <caret line="62" column="89" selection-start-line="62" selection-start-column="89" selection-end-line="62" selection-end-column="89" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/login.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -64,17 +46,17 @@
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/auths/LoginController.php" />
         <option value="$PROJECT_DIR$/resources/views/flash.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/auths/layout.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/auths/login.blade.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/resources/views/auths/admin/login.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/auths/staff/login.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/staff/LoginController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/admin/LoginController.php" />
         <option value="$PROJECT_DIR$/app/Helpers/Helpers.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/login.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/staff/login.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/auths/layout.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/login.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/admin/LoginController.php" />
       </list>
     </option>
   </component>
@@ -348,12 +330,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1625747682767</updated>
-      <workItem from="1625747684135" duration="3689000" />
+      <workItem from="1625747684135" duration="4853000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3689000" />
+    <option name="totallyTimeSpent" value="4853000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="777" extended-state="0" />
@@ -457,20 +439,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/admin/LoginController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="39" lean-forward="true" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/auths/layout.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Helpers/Helpers.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -487,25 +455,34 @@
     <entry file="file://$PROJECT_DIR$/public/asset/images/icon.jpeg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/login.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/staff/login.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="38" column="11" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
+        <state relative-caret-position="202">
+          <caret line="16" column="80" selection-start-line="16" selection-start-column="80" selection-end-line="16" selection-end-column="80" />
           <folding>
             <element signature="e#295#352#0#HTML" expanded="true" />
-            <element signature="e#586#610#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/staff/login.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/auths/layout.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="19" column="99" selection-start-line="19" selection-start-column="99" selection-end-line="19" selection-end-column="99" />
-          <folding>
-            <element signature="e#545#592#0#HTML" expanded="true" />
-            <element signature="e#586#610#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="225">
+          <caret line="14" column="70" selection-start-line="14" selection-start-column="70" selection-end-line="14" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/admin/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="62" column="89" selection-start-line="62" selection-start-column="89" selection-end-line="62" selection-end-column="89" />
         </state>
       </provider>
     </entry>

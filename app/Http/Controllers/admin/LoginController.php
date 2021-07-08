@@ -4,6 +4,8 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class LoginController extends Controller
 {
@@ -40,6 +42,27 @@ class LoginController extends Controller
     public function store(Request $request)
     {
         //
+
+        $validator = Validator::make($request->all(),[
+            'username'=>'required',
+            'password'=>'required'
+        ]);
+
+        if ($validator->fails()){
+            return redirect()->back()->with('alert_error',$validator->errors()->first())->withInput();
+        }
+
+        $log = Auth::attempt([
+            'username'=>$request->username,
+            'password'=>$request->password
+        ]);
+
+        if ($log){
+
+        }else{
+            return back()->with("alert_error", 'Invalid login details please try again');
+        }
+
     }
 
     /**

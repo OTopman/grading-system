@@ -10,6 +10,9 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="{{url('asset/libs/css/style.css')}}">
         <link rel="icon" href="{{image_url('logo.png')}}">
+
+        <script src="{{url('asset/libs/js/jquery.min.js')}}"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     </head>
     <body style="background-image: url({{image_url('logo2fade.png')}})">
 
@@ -17,7 +20,6 @@
     @yield('content')
 
 
-    <script src="{{url('asset/libs/js/jquery.min.js')}}"></script>
     <script src="{{url('asset/libs/js/popper.js')}}"></script>
     <script src="{{url('asset/lib/js/bootstrap.min.js')}}"></script>
     <script src="{{url('asset/lib/js/main.js')}}"></script>
