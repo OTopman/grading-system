@@ -11,6 +11,13 @@
 |
 */
 
+
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('auth/login');
 });
+
+
+Route::group(['namespace'=>'auths','prefix'=>'auth'], function (){
+    Route::resource("/login", "LoginController");
+});
+
