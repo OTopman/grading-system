@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\auths;
+namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -16,8 +16,8 @@ class LoginController extends Controller
     {
         //
 
-        $data['page_title'] = "Login";
-        return view('auths.login',$data);
+        $data['page_title'] = "AdminLogin";
+        return view('admin.login',$data);
 
     }
 

@@ -13,11 +13,16 @@
 
 
 Route::get('/', function () {
-    return redirect('auth/login');
+    return redirect('admin/login');
 });
 
 
-Route::group(['namespace'=>'auths','prefix'=>'auth'], function (){
+Route::group(['namespace'=>'admin','prefix'=>'admin'], function (){
     Route::resource("/login", "LoginController");
+});
+
+Route::group(['namespace'=>'staff','prefix'=>'staff'], function (){
+    Route::resource("/login", "LoginController");
+
 });
 
