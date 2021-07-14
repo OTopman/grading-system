@@ -32,19 +32,12 @@ public class Main extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     public String response;
 
-    public List<Lists> mData = new ArrayList<>();
-    public RecyclerView recyclerView;
-    public ListAdapters listAdapters;
-
     public Func func;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        sharedPreferences = getSharedPreferences("ALL_USER_INFO", Context.MODE_PRIVATE);
-        response = sharedPreferences.getString("all_user_info", null);
 
         student = findViewById(R.id.student);
         home = findViewById(R.id.home);
@@ -68,12 +61,6 @@ public class Main extends AppCompatActivity {
             }
         });
 
-       /* notification.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getSupportFragmentManager().beginTransaction().replace(R.id.container, new Notifications()).addToBackStack(null).commit();
-            }
-        });*/
     }
 
     @Override
@@ -81,7 +68,6 @@ public class Main extends AppCompatActivity {
         super.onBackPressed();
         getSupportFragmentManager().beginTransaction().replace(R.id.container, new Dashboard()).addToBackStack(null).commit();
     }
-
 
 
     public void bottomSheet(){
@@ -94,30 +80,6 @@ public class Main extends AppCompatActivity {
                 mBottomSheetDialog.dismiss();
             }
         });
-
-        recyclerView = (RecyclerView) view.findViewById(R.id.my_recycler_view);
-        listAdapters = new ListAdapters(mData);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(listAdapters);
-
-        mData = new ArrayList<>();
-
-
-        try {
-
-            JSONObject object = new JSONObject(response);
-            JSONArray data = object.getJSONArray("hostel_data");
-
-            for (int i = 0; i < data.length(); i++){
-                JSONObject hostel_data = data.getJSONObject(i);
-                mData.add(new Lists(hostel_data.getString("name"),hostel_data.getString("type"),"",hostel_data.getString("id"),"make_payment"));
-            }
-
-
-        }catch (JSONException e){
-            e.printStackTrace();
-        }
 
         mBottomSheetDialog = new BottomSheetDialog(this);
         mBottomSheetDialog.setContentView(view);

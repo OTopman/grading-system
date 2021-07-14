@@ -1,13 +1,13 @@
-package com.app.hostelallocation;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
+package com.app.gradingsystem;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -25,9 +25,11 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+
+
 public class Login extends AppCompatActivity {
 
-    public Func func;
+    public com.app.gradingsystem.Func func;
     public AppCompatButton developed_by;
     public TextInputEditText matric,password;
     public ProgressDialog progressDialog;
@@ -38,7 +40,7 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        func = new Func(this);
+        func = new com.app.gradingsystem.Func(this);
         this.setTitle("Account Login");
 
         login = findViewById(R.id.login);
@@ -49,7 +51,7 @@ public class Login extends AppCompatActivity {
         developed_by.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Login.this, Developer.class));
+                startActivity(new Intent(com.app.gradingsystem.Login.this, com.app.gradingsystem.Developer.class));
             }
         });
 

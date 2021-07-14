@@ -27,7 +27,7 @@ public class Dashboard extends Fragment {
     public String response;
     public TextView fname,level,email,dept,matric,phone,gender;
 
-    public com.app.hostelallocation.Func func;
+    public Func func;
 
     @Nullable
     @Override
@@ -38,7 +38,7 @@ public class Dashboard extends Fragment {
         response = sharedPreferences.getString("all_user_info", null);
 
         getActivity().setTitle("Student Dashboard");
-        func = new com.app.hostelallocation.Func(getActivity());
+        func = new Func(getActivity());
 
         fname = root.findViewById(R.id.fname);
         dept = root.findViewById(R.id.dept);
@@ -54,18 +54,18 @@ public class Dashboard extends Fragment {
             JSONObject object = new JSONObject(response);
             JSONObject student_info = object.getJSONObject("student_info");
 
-           matric.setText(student_info.getString("matric"));
-           fname.setText(student_info.getString("fname"));
-           phone.setText(student_info.getString("phone"));
-           level.setText(student_info.getString("level"));
-           gender.setText(student_info.getString("gender"));
-           email.setText(student_info.getString("email"));
-           dept.setText(student_info.getString("dept"));
+            matric.setText(student_info.getString("matric"));
+            fname.setText(student_info.getString("fname"));
+            phone.setText(student_info.getString("phone"));
+            level.setText(student_info.getString("level"));
+            gender.setText(student_info.getString("gender"));
+            email.setText(student_info.getString("email"));
+            dept.setText(student_info.getString("dept"));
 
             Transformation transformation = new RoundedTransformationBuilder()
-                    .cornerRadiusDp(50)
-                    .oval(true)
-                    .build();
+                .cornerRadiusDp(50)
+                .oval(true)
+                .build();
 
             final String matric = student_info.getString("matric").toLowerCase();
             Picasso.get().load(Core.IMG_URL+matric+".jpg").transform(transformation).into(image);

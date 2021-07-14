@@ -3,6 +3,7 @@ package com.app.gradingsystem;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -17,7 +18,7 @@ import com.squareup.picasso.Transformation;
 
 import java.util.List;
 
-public class RecyclerViewAdapters extends RecyclerView.Adapter<com.app.careerguidance.RecyclerViewAdapters.MyViewHolder>{
+public class RecyclerViewAdapters extends RecyclerView.Adapter<RecyclerViewAdapters.MyViewHolder>{
 
     Context mContext;
     private List<Lists> mData;
@@ -46,9 +47,9 @@ public class RecyclerViewAdapters extends RecyclerView.Adapter<com.app.careergui
         String is_click = ((Lists) mData.get(position)).getIs_click();
 
         Transformation transformation = new RoundedTransformationBuilder()
-                .cornerRadiusDp(50)
-                .oval(true)
-                .build();
+            .cornerRadiusDp(50)
+            .oval(true)
+            .build();
 
         Picasso.get().load(mData.get(position).getImage()).transform(transformation).into(holder.st_image);
 
@@ -56,7 +57,7 @@ public class RecyclerViewAdapters extends RecyclerView.Adapter<com.app.careergui
             holder.click.setOnClickListener(new android.view.View.OnClickListener() {
                 @Override
                 public void onClick(android.view.View v) {
-                    String view_id = ((Lists) com.app.careerguidance.RecyclerViewAdapters.this.mData.get(position)).getId();
+                    String view_id = ((Lists) RecyclerViewAdapters.this.mData.get(position)).getId();
 
                     Intent intent = new Intent(v.getContext(), View.class);
                     intent.putExtra("view_id", view_id);

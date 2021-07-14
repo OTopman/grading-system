@@ -33,7 +33,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-light"
-                android:text="All Hall Of Residence"
+                android:text="Project Result"
                 android:layout_weight="0.0" />
 
             <Button
@@ -63,10 +63,7 @@
             android:layout_height="wrap_content">
 
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:id="@+id/my_recycler_view"
-                android:layout_height="wrap_content"/>
+
 
 
         </LinearLayout>

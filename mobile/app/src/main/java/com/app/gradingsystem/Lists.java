@@ -2,15 +2,17 @@ package com.app.gradingsystem;
 
 public class Lists {
 
+    private String level;
     private String id;
     private String image;
     private String matric;
     private String name;
     private String is_click;
 
-    public Lists(String matric, String name, String image, String id, String is_click) {
+    public Lists(String matric, String name, String level, String image, String id, String is_click) {
         this.matric = matric;
         this.name = name;
+        this.level = level;
         this.image = image;
         this.id = id;
         this.is_click = is_click;
@@ -24,6 +26,9 @@ public class Lists {
         this.is_click = is_click;
     }
 
+    public String getLevel() {
+        return this.level;
+    }
 
     public String getId() {
         return this.id;
@@ -39,6 +44,10 @@ public class Lists {
 
     public String getName() {
         return this.name;
+    }
+
+    public void setLevel(String level) {
+        this.level = level;
     }
 
     public void setId(String id) {
