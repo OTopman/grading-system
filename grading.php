@@ -48,6 +48,31 @@ require_once 'libs/head.php';
                             </select>
                         </div>
                     </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="">Dressing</label>
+                            <input type="number" name="dressing" placeholder="Dressing" class="form-control" required id="">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="">Report</label>
+                            <input type="number" name="report" placeholder="Report" class="form-control" required id="">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="">Presentation</label>
+                            <input type="number" name="presentation" placeholder="Presentation" class="form-control" required id="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" class="btn btn-warning" value="Submit" name="" id="">
                 </div>
             </form>
 
