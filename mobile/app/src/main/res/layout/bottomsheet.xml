@@ -70,6 +70,7 @@
 
                <Button
                    android:layout_width="match_parent"
+                   android:padding="@dimen/spacing_large"
                    android:text="Check Your Project Grade"
                    android:layout_height="match_parent"/>
 
