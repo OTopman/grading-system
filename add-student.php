@@ -118,7 +118,7 @@ require_once 'libs/head.php';
                             <select name="level" class="form-control" required id="">
                                 <option value="" selected>Select</option>
                                 <?php
-                                    foreach (array('nd 1 ft','nd 2 ft','nd 1 dpt','nd 2 dpt','nd rpt yr1','nd rpt yr2','nd rpt yr3','hnd 1 ft','hnd 2 ft','hnd 1 dpt','hnd 2 dpt') as $value){
+                                    foreach (array('nd 2 ft','nd 2 dpt','nd rpt yr3','hnd 2 ft','hnd 2 dpt') as $value){
                                         ?>
                                         <option value="<?= $value ?>"><?= strtoupper($value) ?></option>
                                         <?php

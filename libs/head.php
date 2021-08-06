@@ -124,12 +124,17 @@
 
                 <li >
                     <a href="<?= base_url('grading.php') ?>">
-                        <i class="fa fa-home text-warning"></i>
-                        <span>Project Defense Grading</span>
+                        <i class="fa fa-sort-alpha-desc text-warning"></i>
+                        <span>Project Grading</span>
                     </a>
                 </li>
 
-
+                <li >
+                    <a href="<?= base_url('defense.php') ?>">
+                        <i class="fa fa-sort-alpha-desc text-warning"></i>
+                        <span>Project Defense Grading</span>
+                    </a>
+                </li>
 
 
                 <li>
