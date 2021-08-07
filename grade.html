@@ -4,7 +4,67 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
+<body style="width: 100%">
+
+<img src="templates/images/banner.png" align="center" alt="">
+
+<div style="background: #1f648b; padding: 8px 10px; margin-bottom: 10px; margin-top: 10px; text-align: center; text-transform: uppercase; color: #fff">
+    <span>Project Defense Grading Result</span>
+</div>
+
+<div style="text-align: center; text-transform: uppercase; margin-bottom: 30px;">
+    <span>{{programme}} second semester {{year}}</span>
+</div>
+
+<table style="width: 100%">
+    <tr>
+        <td style="padding: 5px;">Matric Number</td>
+        <td style="padding: 5px;">{{matric}}</td>
+    </tr>
+
+
+    <tr>
+        <td style="padding: 5px;">Full Name</td>
+        <td style="padding: 5px;">{{name}}</td>
+    </tr>
+
+    <tr>
+        <td style="padding: 5px;">Department</td>
+        <td style="padding: 5px;">{{department}}</td>
+    </tr>
+</table>
+
+<table style="width: 100%; border-collapse: collapse; margin-top: 30px;" border="1">
+    <tr>
+        <td style="padding: 5px;">SN</td>
+        <td style="padding: 5px;">Title</td>
+        <td style="padding: 5px;">Score</td>
+    </tr>
+    <tr>
+        <td style="padding: 5px;">{{sn1}}</td>
+        <td style="padding: 5px;">{{title1}}</td>
+        <td style="padding: 5px;">{{score1}}</td>
+    </tr>
+    <tr>
+        <td style="padding: 5px;">{{sn2}}</td>
+        <td style="padding: 5px;">{{title2}}</td>
+        <td style="padding: 5px;">{{score2}}</td>
+    </tr>
+    <tr>
+        <td style="padding: 5px;">{{sn3}}</td>
+        <td style="padding: 5px;">{{title3}}</td>
+        <td style="padding: 5px;">{{score3}}</td>
+    </tr>
+    <tr>
+        <td style="padding: 5px;">{{sn4}}</td>
+        <td style="padding: 5px;">{{title4}}</td>
+        <td style="padding: 5px;">{{score4}}</td>
+    </tr>
+    <tr>
+        <td colspan="2" align="right" style="padding: 5px;">Total</td>
+        <td style="padding: 5px;">{{total}}</td>
+    </tr>
+</table>
 
 </body>
 </html>

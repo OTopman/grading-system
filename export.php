@@ -13,24 +13,40 @@ if (!is_login()){
     return;
 }
 
+
+
 if (isset($_POST['export'])){
     $department = $_POST['department'];
     $grading_year = $_POST['grading-year'];
     $level = $_POST['level'];
 
-    $error = array();
+    $error = $data = array();
 
     if (empty($department) or  empty($grading_year) or empty($level)){
         $error[] = "All field(s) are required";
     }
 
-    $data = array(
-        array("NAME" => "John Doe", "EMAIL" => "john.doe@gmail.com", "GENDER" => "Male", "COUNTRY" => "United States"),
-        array("NAME" => "Gary Riley", "EMAIL" => "gary@hotmail.com", "GENDER" => "Male", "COUNTRY" => "United Kingdom"),
-        array("NAME" => "Edward Siu", "EMAIL" => "siu.edward@gmail.com", "GENDER" => "Male", "COUNTRY" => "Switzerland"),
-        array("NAME" => "Betty Simons", "EMAIL" => "simons@example.com", "GENDER" => "Female", "COUNTRY" => "Australia"),
-        array("NAME" => "Frances Lieberman", "EMAIL" => "lieberman@gmail.com", "GENDER" => "Female", "COUNTRY" => "United Kingdom")
-    );
+    $sql = $db->query("SELECT g.*, s.fname, s.matric, s.level, d.name FROM grading g INNER JOIN students s ON g.student_id = s.id INNER JOIN departments d ON s.dept = d.id WHERE s.dept='$department' and s.level='$level' and g.grading_year='$grading_year' ORDER BY g.id DESC ");
+
+    if ($sql->rowCount() == 0){
+        $error[] = "No record found";
+    }
+
+    while ($rs = $sql->fetch(PDO::FETCH_ASSOC)){
+        $data[] = array(
+            'Matric number'=>$rs['matric'],
+            'Full Name'=>$rs['fname'],
+            'Department'=>$rs['name'],
+            'Level'=>$rs['level'],
+            'Pressing'=>$rs['dressing'],
+            'Presentation'=>$rs['presentation'],
+            'Report'=>$rs['report'],
+            'Question & Answer'=>$rs['question'],
+            'Total Grade'=> $rs['dressing'] + $rs['presentation'] + $rs['question'] + $rs['report'],
+            'Comment'=>$rs['comment']
+        );
+    }
+
 
     $error_count = count($error);
 
@@ -51,7 +67,7 @@ if (isset($_POST['export'])){
             }
             // filter data
             array_walk($row, 'filterData');
-            echo implode("\t", array_values($row)) . "\n";
+            //echo implode("\t", array_values($row)) . "\n";
         }
 
 
@@ -125,7 +141,7 @@ require_once 'libs/head.php';
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="">Export</label>
-                            <select name="grading-year" required id="" class="form-control">
+                            <select required id="" class="form-control">
                                 <option>Excel</option>
                             </select>
                         </div>
