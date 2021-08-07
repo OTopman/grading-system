@@ -51,7 +51,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:fontFamily="sans-serif-condensed"
-                        android:text="Design and implementation of an android \nbased  project defense grading system \n  \n(A case study of computer science department ) \n \n (Supervised By Dr Mrs ugwu)"
+                        android:text="Design and implementation of an android \nbased  project defense grading system \n  \n(A case study of computer science department ) \n \n (Supervised By Mrs I.G Ugwu)"
                         android:textSize="@dimen/spacing_large"
                         android:padding="@dimen/spacing_medium"
                         android:textColor="@color/black"
