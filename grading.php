@@ -19,6 +19,7 @@ if (isset($_POST['add'])){
     $report = $_POST['report'];
     $presentation = $_POST['presentation'];
     $comment = $_POST['comment'];
+    $grading_year = $_POST['grading-year'];
     $question = $_POST['question'];
 
     $error = array();
@@ -28,7 +29,7 @@ if (isset($_POST['add'])){
         $error[] = student_details($student_id,'matric')." has already been grade";
     }
 
-    if (empty($dressing) or empty($presentation) or empty($report) or empty($question)){
+    if (empty($dressing) or empty($presentation) or empty($grading_year) or empty($report) or empty($question)){
         $error[] = "All field(s) are required";
     }
 
@@ -52,7 +53,7 @@ if (isset($_POST['add'])){
 
     if ($error_count == 0){
 
-        $in = $db->query("INSERT INTO grading (student_id,dressing,report,presentation,comment,question)VALUES ('$student_id','$dressing','$report','$presentation','$comment','$question')");
+        $in = $db->query("INSERT INTO grading (student_id,dressing,report,presentation,comment,question,grading_year)VALUES ('$student_id','$dressing','$report','$presentation','$comment','$question','$grading_year')");
 
         set_flash("Project Grading has been successful ","warning");
 
@@ -117,6 +118,23 @@ require_once 'libs/head.php';
                         </div>
                     </div>
 
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="">Grading Year</label>
+                            <select name="grading-year" required id="" class="form-control">
+                                <option value="" selected disabled>Select</option>
+                                <?php
+                                foreach (range(2021,date('Y')) as $value){
+                                    $start = $value-1;
+                                    ?>
+                                    <option value="<?= $start.' - '.$value ?>"><?= $start.' - '.$value ?></option>
+                                    <?php
+                                }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="">Presentation</label>
@@ -130,6 +148,7 @@ require_once 'libs/head.php';
                             <input type="number" name="question" placeholder="Question &amp; Answer" class="form-control" required id="">
                         </div>
                     </div>
+
 
                     <div class="col-sm-12">
                         <div class="form-group">

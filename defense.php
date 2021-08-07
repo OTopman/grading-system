@@ -45,6 +45,7 @@ require_once 'libs/head.php';
                         <th>Presentation </th>
                         <th>Report</th>
                         <th>Question & Answer</th>
+                        <th>Grading Year</th>
                         <th>Comment</th>
                         <th>Total Grade</th>
                         <th>Action</th>
@@ -62,6 +63,7 @@ require_once 'libs/head.php';
                         <th>Presentation </th>
                         <th>Report</th>
                         <th>Question & Answer</th>
+                        <th>Grading Year</th>
                         <th>Comment</th>
                         <th>Total Grade</th>
                         <th>Action</th>
@@ -83,6 +85,7 @@ require_once 'libs/head.php';
                                 <td><?= $rs['presentation'] ?></td>
                                 <td><?= $rs['report'] ?></td>
                                 <td><?= $rs['question'] ?></td>
+                                <td><?= $rs['grading_year'] ?></td>
                                 <td><?= $rs['comment'] ?></td>
                                 <td><?= $rs['dressing'] + $rs['presentation'] + $rs['report'] + $rs['question'] ?></td>
                                 <td><a href="view.php?id=<?= $rs['student_id'] ?>" class="btn btn-warning btn-sm">View</a></td>

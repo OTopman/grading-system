@@ -59,7 +59,7 @@ public class Main extends AppCompatActivity {
             public void onClick(View v) {
 
                 AlertDialog.Builder builder1 = new AlertDialog.Builder(Main.this);
-                builder1.setMessage("Are you sure, you want to check your project defense grading?");
+                builder1.setMessage("Are you sure, you want to download your project defense grading?");
                 builder1.setCancelable(true);
 
                 builder1.setPositiveButton(

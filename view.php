@@ -25,7 +25,57 @@ if ($sql->rowCount() == 0){
 
 $data = $sql->fetch(PDO::FETCH_ASSOC);
 
+$grading = $db->query("SELECT * FROM grading WHERE student_id='$student_id'");
+$data_grading = $grading->fetch(PDO::FETCH_ASSOC);
+
 $page_title = strtoupper($data['matric'])." - Dashboard";
+
+if (isset($_POST['update'])){
+    $dressing = $_POST['dressing'];
+    $report = $_POST['report'];
+    $presentation = $_POST['presentation'];
+    $comment = $_POST['comment'];
+    $question = $_POST['question'];
+
+    $error = array();
+
+
+    if (empty($dressing) or empty($presentation) or empty($report) or empty($question)){
+        $error[] = "All field(s) are required";
+    }
+
+    if (!is_numeric($dressing)){
+        $error[] = "Dressing score should be number";
+    }
+
+    if (!is_numeric($report)){
+        $error[] = "Report score should be number";
+    }
+
+    if (!is_numeric($presentation)){
+        $error[] = "Presentation score should be number";
+    }
+
+    if (!is_numeric($question)){
+        $error[] = "Question score should be number";
+    }
+
+    $error_count = count($error);
+
+    if ($error_count == 0){
+
+        $up = $db->query("UPDATE grading SET dressing='$dressing', presentation='$presentation', report='$report', question='$question', comment='$comment' WHERE student_id='$student_id'");
+
+        set_flash("Project Grading has been update successful ","warning");
+
+    }else{
+        $msg = ($error_count == 1) ? 'An error occurred' : 'Some error(s) occurred';
+        foreach ($error as $value){
+            $msg.= '<p>'.$value.'</p>';
+        }
+        set_flash($msg,'danger');
+    }
+}
 
 require_once 'libs/head.php';
 ?>
@@ -48,7 +98,7 @@ require_once 'libs/head.php';
                 <div class="col-sm-4 border-right">
                     <div class="description-block">
                         <h5 class="description-header"><?= ucwords($data['gender']) ?></h5>
-                        <span class="description-text">Gender</span>
+                        <span class="description-text" style="text-transform: capitalize">Gender</span>
                     </div>
                     <!-- /.description-block -->
                 </div>
@@ -56,7 +106,7 @@ require_once 'libs/head.php';
                 <div class="col-sm-4 border-right">
                     <div class="description-block">
                         <h5 class="description-header"><?= $data['dept'] ?></h5>
-                        <span class="description-text">Department</span>
+                        <span class="description-text" style="text-transform: capitalize">Department</span>
                     </div>
                     <!-- /.description-block -->
                 </div>
@@ -64,7 +114,7 @@ require_once 'libs/head.php';
                 <div class="col-sm-4">
                     <div class="description-block">
                         <h5 class="description-header"><?= $data['email'] ?></h5>
-                        <span class="description-text">Email Address</span>
+                        <span class="description-text" style="text-transform: capitalize">Email Address</span>
                     </div>
                     <!-- /.description-block -->
                 </div>
@@ -118,32 +168,85 @@ require_once 'libs/head.php';
             <div class="tab-pane" id="tab_2">
 
                 <div class="table-responsive">
-                    <table class="table table-bordered" id="example1">
-                        <thead>
+                    <table class="table table-bordered">
                         <tr>
-                            <th>SN</th>
-                            <th>Grade Score</th>
-                            <th>Date Added</th>
+                            <td>Dressing</td>
+                            <td><?= $data_grading['dressing'] ?></td>
                         </tr>
-                        </thead>
-                        <tfoot>
                         <tr>
-                            <th>SN</th>
-                            <th>Grade Score</th>
-                            <th>Date Added</th>
+                            <td>Presentation</td>
+                            <td><?= $data_grading['presentation'] ?></td>
                         </tr>
-                        </tfoot>
-                        <tbody>
-
-                        </tbody>
+                        <tr>
+                            <td>Report</td>
+                            <td><?= $data_grading['report'] ?></td>
+                        </tr>
+                        <tr>
+                            <td>Question &amp; Answer</td>
+                            <td><?= $data_grading['question'] ?></td>
+                        </tr>
+                        <tr>
+                            <td>Comment</td>
+                            <td><?= $data_grading['comment'] ?></td>
+                        </tr>
+                        <tr>
+                            <td>Grading Year</td>
+                            <td><?= $rs['grading_year'] ?></td>
+                        </tr>
+                        <tr>
+                            <td>Total Grade</td>
+                            <td><?= $data_grading['dressing'] + $data_grading['presentation'] + $data_grading['report'] + $data_grading['question'] ?></td>
+                        </tr>
                     </table>
                 </div>
-            </div>
-            <!-- /.tab-pane -->
-            <div class="tab-pane" id="tab_3">
 
+                <h5 class="page-header">Update Project Defense Grading</h5>
+
+                <form action="" method="post">
+                    <div class="row">
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="">Dressing</label>
+                                <input type="number" value="<?= $data_grading['dressing'] ?>" name="dressing" placeholder="Dressing" class="form-control" required id="">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="">Report</label>
+                                <input type="number" value="<?= $data_grading['report'] ?>" name="report" placeholder="Report" class="form-control" required id="">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="">Presentation</label>
+                                <input type="number" value="<?= $data_grading['presentation'] ?>" name="presentation" placeholder="Presentation" class="form-control" required id="">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="">Question &amp; Answer</label>
+                                <input type="number" value="<?= $data_grading['question'] ?>" name="question" placeholder="Question &amp; Answer" class="form-control" required id="">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="">Comment (optional)</label>
+                                <textarea name="comment" class="form-control" id="" placeholder="Comment"><?= $data_grading['comment'] ?></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-warning" value="Update" name="update" id="">
+                    </div>
+                </form>
             </div>
-            <!-- /.tab-pane -->
+
         </div>
         <!-- /.tab-content -->
     </div>

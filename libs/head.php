@@ -136,6 +136,12 @@
                     </a>
                 </li>
 
+                <li >
+                    <a href="<?= base_url('export.php') ?>">
+                        <i class="fa fa-sort-alpha-desc text-warning"></i>
+                        <span>Export Project Grading Score</span>
+                    </a>
+                </li>
 
                 <li>
                     <a href="<?= base_url('logout.php') ?>">
