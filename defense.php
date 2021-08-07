@@ -31,6 +31,68 @@ require_once 'libs/head.php';
         <div class="box-body">
 
 
+            <div class="table-responsive">
+                <table class="table table-bordered" id="example1">
+                    <thead>
+                    <tr>
+                        <th>SN</th>
+                        <th>Passport</th>
+                        <th>Matric Number</th>
+                        <th>Name</th>
+                        <th>Department</th>
+                        <th>Level</th>
+                        <th>Dressing </th>
+                        <th>Presentation </th>
+                        <th>Report</th>
+                        <th>Question & Answer</th>
+                        <th>Comment</th>
+                        <th>Total Grade</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tfoot>
+                    <tr>
+                        <th>SN</th>
+                        <th>Passport</th>
+                        <th>Matric Number</th>
+                        <th>Name</th>
+                        <th>Department</th>
+                        <th>Level</th>
+                        <th>Dressing </th>
+                        <th>Presentation </th>
+                        <th>Report</th>
+                        <th>Question & Answer</th>
+                        <th>Comment</th>
+                        <th>Total Grade</th>
+                        <th>Action</th>
+                    </tr>
+                    </tfoot>
+                    <tbody>
+                    <?php
+                        $sql = $db->query("SELECT g.*, s.fname, s.matric, s.level, d.name FROM grading g INNER JOIN students s ON g.student_id = s.id INNER JOIN departments d ON s.dept = d.id ORDER BY g.id DESC ");
+                        while ($rs = $sql->fetch(PDO::FETCH_ASSOC)){
+                            ?>
+                            <tr>
+                                <td><?= $sn++ ?></td>
+                                <td><img src="https://www.federalpolyede.edu.ng/passport/Reg<?= $rs['matric'] ?>.jpg" style="width: 50px; height: 50px;" class="img-circle" alt=""></td>
+                                <td><?= $rs['matric'] ?></td>
+                                <td><?= $rs['fname'] ?></td>
+                                <td><?= $rs['name'] ?></td>
+                                <td><?= $rs['level'] ?></td>
+                                <td><?= $rs['dressing'] ?></td>
+                                <td><?= $rs['presentation'] ?></td>
+                                <td><?= $rs['report'] ?></td>
+                                <td><?= $rs['question'] ?></td>
+                                <td><?= $rs['comment'] ?></td>
+                                <td><?= $rs['dressing'] + $rs['presentation'] + $rs['report'] + $rs['question'] ?></td>
+                                <td><a href="view.php?id=<?= $rs['student_id'] ?>" class="btn btn-warning btn-sm">View</a></td>
+                            </tr>
+                            <?php
+                        }
+                    ?>
+                    </tbody>
+                </table>
+            </div>
 
 
         </div>

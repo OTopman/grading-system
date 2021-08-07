@@ -62,6 +62,12 @@ function admin_details($value){
     return $rs[$value];
 }
 
+function student_details($id,$value){
+    global $db;
+    $sql = $db->query("SELECT * FROM students WHERE id='$id'");
+    $rs = $sql->fetch(PDO::FETCH_ASSOC);
+    return $rs[$value];
+}
 
 
 function admin_info($id,$value){
@@ -78,16 +84,6 @@ function student_class($id,$value){
     return $rs[$value];
 }
 
-function term($n){
-    if ($n == 1){
-        $msg = "First Term";
-    }elseif($n == 2){
-        $msg = "Second Term";
-    }else{
-        $msg = "Third Term";
-    }
-    return $msg;
-}
 
 function amount_format($amount){
     return "&#8358;".number_format($amount,2);
@@ -97,12 +93,6 @@ function checkemail($str) {
     return (!preg_match("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $str)) ? FALSE : TRUE;
 }
 
-function hostel_type($id,$value){
-    global $db;
-    $sql = $db->query("SELECT * FROM hostel_type WHERE id='$id'");
-    $rs = $sql->fetch(PDO::FETCH_ASSOC);
-    return $rs[$value];
-}
 
 function get_json($data){
     echo json_encode($data);

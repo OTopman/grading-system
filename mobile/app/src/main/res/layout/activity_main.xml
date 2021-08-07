@@ -57,7 +57,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@android:color/white"
+            android:background="@color/colorPrimary"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -72,15 +72,12 @@
                     android:layout_width="49dp"
                     android:layout_height="?attr/actionBarSize"
                     android:background="?attr/selectableItemBackgroundBorderless"
-                    android:tint="@color/colorPrimary"
-                    app:srcCompat="@drawable/ic_outline_dashboard_24"
+                    android:tint="@color/white"
+                    app:srcCompat="@drawable/ic_baseline_home_24"
                     tools:ignore="VectorDrawableCompat" />
 
             </LinearLayout>
 
-            <View
-                android:layout_width="?attr/actionBarSize"
-                android:layout_height="0dp" />
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -93,9 +90,9 @@
                     android:layout_width="?attr/actionBarSize"
                     android:layout_height="?attr/actionBarSize"
                     android:background="?attr/selectableItemBackgroundBorderless"
-                    android:tint="@color/colorPrimary"
-                    android:id="@+id/notification"
-                    app:srcCompat="@drawable/ic_baseline_history_24"
+                    android:tint="@color/white"
+                    android:id="@+id/download"
+                    app:srcCompat="@drawable/ic_baseline_cloud_download_24"
                     tools:ignore="VectorDrawableCompat" />
 
             </LinearLayout>
@@ -105,19 +102,6 @@
 
     </LinearLayout>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/student"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="15dp"
-        android:clickable="true"
-        android:tint="@android:color/white"
-        app:backgroundTint="@color/colorPrimary"
-        app:elevation="5dp"
-        app:fabSize="normal"
-        app:srcCompat="@drawable/ic_baseline_home_24"
-        tools:ignore="VectorDrawableCompat" />
+
 
 </RelativeLayout>
