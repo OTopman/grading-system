@@ -29,6 +29,7 @@ try {
     $mpdf->watermark_font = 'DejaVuSansCondensed';
     $mpdf->watermarkTextAlpha = 0.1;
     $mpdf->SetDisplayMode('fullpage');
+    $mpdf->list_indent_first_level = 0;	// 1 or 0 - whether to indent the first level of a list
 
 } catch (\Mpdf\MpdfException $e) {
     print "Creating an mPDF object failed with" . $e->getMessage();
