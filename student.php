@@ -31,6 +31,7 @@ require_once 'libs/head.php';
                     <thead>
                         <tr>
                             <th>SN</th>
+                            <th>Passport</th>
                             <th>Matric Number</th>
                             <th>Full Name</th>
                             <th>Email Address</th>
@@ -45,6 +46,7 @@ require_once 'libs/head.php';
                     <tfoot>
                     <tr>
                         <th>SN</th>
+                        <th>Passport</th>
                         <th>Matric Number</th>
                         <th>Full Name</th>
                         <th>Email Address</th>
@@ -67,7 +69,8 @@ require_once 'libs/head.php';
                             ?>
                             <tr>
                                 <td><?= $sn++ ?></td>
-                                <td><?= $rs['matric'] ?></td>
+                                <td><img src="https://www.federalpolyede.edu.ng/passport/Reg<?= $rs['matric'] ?>.jpg" style="width: 50px; height: 50px;" class="img-circle" alt=""></td>
+                                <td><?= strtoupper($rs['matric']) ?></td>
                                 <td><?= ucwords($rs['fname']) ?></td>
                                 <td><?= $rs['email'] ?></td>
                                 <td><?= $rs['phone'] ?></td>

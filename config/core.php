@@ -8,7 +8,7 @@
 
     session_start();
     require_once 'func.php';
-    define('Env', 'onlin');
+    define('Env', 'online');
 
     define("DB_PREFIX", "ht_");
 
@@ -22,9 +22,9 @@
 
     if (Env == "online") {
         define('DB_HOST', 'localhost');
-        define('DB_TABLE', 'verajnse_hostel');
-        define('DB_USER', 'verajnse_hostel');
-        define('DB_PASSWORD', '&b.7LWmCqXYQ');
+        define('DB_TABLE', 'verajnse_grading_system');
+        define('DB_USER', 'verajnse_grading_system');
+        define('DB_PASSWORD', 'MXUDb}7;&Q+f');
     }else{
         define('DB_HOST', 'localhost');
         define('DB_TABLE', 'fpe_app_grading');

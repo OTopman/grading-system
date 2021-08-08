@@ -91,7 +91,8 @@ require_once 'libs/head.php';
             <h5 class="widget-user-desc">Level : <?= ucwords($data['level']) ?></h5>
         </div>
         <div class="widget-user-image">
-            <img class="img-circle" src="<?= image_url('icon.jpeg') ?>" style="width: 80px; height: 80px;" alt="User Avatar">
+            <img class="img-circle" src="https://www.federalpolyede.edu.ng/passport/Reg<?= $data['matric'] ?>.jpg" style="width: 80px; height: 80px;" alt="User Avatar">
+
         </div>
         <div class="box-footer">
             <div class="row">
@@ -138,11 +139,11 @@ require_once 'libs/head.php';
                     <table class="table table-bordered">
                         <tr>
                             <td>Matric No</td>
-                            <td><?= $data['matric'] ?></td>
+                            <td><?= strtoupper($data['matric']) ?></td>
                         </tr>
                         <tr>
                             <td>Student Name</td>
-                            <td><?= $data['fname'] ?></td>
+                            <td><?= ucwords($data['fname']) ?></td>
                         </tr>
                         <tr>
                             <td>Level</td>
@@ -191,10 +192,10 @@ require_once 'libs/head.php';
                         </tr>
                         <tr>
                             <td>Grading Year</td>
-                            <td><?= $rs['grading_year'] ?></td>
+                            <td><?= $data_grading['grading_year'] ?></td>
                         </tr>
                         <tr>
-                            <td>Total Grade</td>
+                            <td>Total Score</td>
                             <td><?= $data_grading['dressing'] + $data_grading['presentation'] + $data_grading['report'] + $data_grading['question'] ?></td>
                         </tr>
                     </table>

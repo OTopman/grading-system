@@ -47,7 +47,8 @@ require_once 'libs/head.php';
                         <th>Question & Answer</th>
                         <th>Grading Year</th>
                         <th>Comment</th>
-                        <th>Total Grade</th>
+                        <th>Total Score</th>
+                        <th>Grade</th>
                         <th>Action</th>
                     </tr>
                     </thead>
@@ -65,7 +66,8 @@ require_once 'libs/head.php';
                         <th>Question & Answer</th>
                         <th>Grading Year</th>
                         <th>Comment</th>
-                        <th>Total Grade</th>
+                        <th>Total Score</th>
+                        <th>Grade</th>
                         <th>Action</th>
                     </tr>
                     </tfoot>
@@ -77,10 +79,10 @@ require_once 'libs/head.php';
                             <tr>
                                 <td><?= $sn++ ?></td>
                                 <td><img src="https://www.federalpolyede.edu.ng/passport/Reg<?= $rs['matric'] ?>.jpg" style="width: 50px; height: 50px;" class="img-circle" alt=""></td>
-                                <td><?= $rs['matric'] ?></td>
-                                <td><?= $rs['fname'] ?></td>
+                                <td><?= strtoupper($rs['matric']) ?></td>
+                                <td><?= ucwords($rs['fname']) ?></td>
                                 <td><?= $rs['name'] ?></td>
-                                <td><?= $rs['level'] ?></td>
+                                <td><?= strtoupper($rs['level']) ?></td>
                                 <td><?= $rs['dressing'] ?></td>
                                 <td><?= $rs['presentation'] ?></td>
                                 <td><?= $rs['report'] ?></td>
@@ -88,6 +90,14 @@ require_once 'libs/head.php';
                                 <td><?= $rs['grading_year'] ?></td>
                                 <td><?= $rs['comment'] ?></td>
                                 <td><?= $rs['dressing'] + $rs['presentation'] + $rs['report'] + $rs['question'] ?></td>
+                                <td>
+                                    <?php
+                                        $total_score = $rs['dressing'] + $rs['presentation'] + $rs['report'] + $rs['question'];
+
+                                        echo grade($total_score);
+
+                                    ?>
+                                </td>
                                 <td><a href="view.php?id=<?= $rs['student_id'] ?>" class="btn btn-warning btn-sm">View</a></td>
                             </tr>
                             <?php

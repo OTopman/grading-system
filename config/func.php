@@ -98,3 +98,35 @@ function get_json($data){
     echo json_encode($data);
     exit();
 }
+
+function grade($sn){
+
+    if ($sn >= 75 || $sn >= 100){
+        return "A";
+    }elseif ($sn >= 70 || $sn >= 74 ){
+        return "AB";
+    }elseif ($sn >= 65 || $sn >= 69){
+        return "B";
+    }elseif ($sn >= 60 || $sn >= 64){
+        return "BC";
+    }elseif ($sn >= 55 || $sn >= 59){
+        return "C";
+    }elseif ($sn >= 50 || $sn >= 54){
+        return "CD";
+    }elseif ($sn >= 45 || $sn >= 49){
+        return "D";
+    }elseif ($sn >= 40 || $sn >= 44){
+        return "E";
+    }else{
+        return "F";
+    }
+
+}
+
+function programme($name){
+    if (in_array($name,array('nd 2 ft','nd 2 dpt','nd rpt yr3'))){
+        return "NATIONAL DIPLOMA";
+    }else{
+        return "HIGHER NATIONAL DIPLOMA";
+    }
+}
