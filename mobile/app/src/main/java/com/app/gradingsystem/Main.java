@@ -3,6 +3,7 @@ package com.app.gradingsystem;
 import android.app.DownloadManager;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Build;
@@ -43,7 +44,7 @@ public class Main extends AppCompatActivity {
     private BottomSheetDialog mBottomSheetDialog,bottomSheetDialog;
 
     SharedPreferences sharedPreferences;
-    public String student_id,response;
+    public String student_id,response,matric;
 
     public Func func;
     DownloadManager manager;
@@ -61,12 +62,14 @@ public class Main extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("ALL_USER_INFO", Context.MODE_PRIVATE);
         response = sharedPreferences.getString("all_user_info", null);
 
+
         try {
 
             JSONObject object = new JSONObject(response);
             JSONObject student_info = object.getJSONObject("student_info");
 
             student_id = student_info.getString("id");
+            matric = student_info.getString("matric");
 
         }catch (JSONException e){
             e.printStackTrace();
@@ -117,13 +120,16 @@ public class Main extends AppCompatActivity {
                                             Uri uri = Uri.parse(Core.URI+object.getString("file"));
 
                                             DownloadManager.Request request2 = new DownloadManager.Request(uri);
-                                            request2.setTitle("Project Defense");
+                                            request2.setTitle(matric);
                                             request2.setDescription("Downloading");
                                             request2.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-                                            //request2.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,"defense");
+                                            request2.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,"defense");
                                             downloadmanager.enqueue(request2);
 
+                                            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(Core.URI+object.getString("file")));
+                                            startActivity(browserIntent);
 
+                                            func.success_toast("Your project defense grading has been downloaded successful");
 
                                         }catch (JSONException e){
                                             e.printStackTrace();
